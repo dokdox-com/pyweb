@@ -2,7 +2,7 @@ import cohere
 import streamlit as st
 
 # Streamlit secrets에서 API 키 가져오기
-api_key = st.secrets["cohere"]["COHERE_API_KEY"]
+api_key = st.secrets["COHERE_API_KEY"]
 
 # API 클라이언트 초기화
 co = cohere.Client(api_key)
