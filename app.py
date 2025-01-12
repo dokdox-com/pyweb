@@ -23,6 +23,6 @@ if user_input:
         )
 
         # 응답 출력
-        st.write(response['messages'][0]['content'])
+        st.write(response.message.content[0].text)
         st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
 
