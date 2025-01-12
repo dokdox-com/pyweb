@@ -13,12 +13,12 @@ st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
 
 # 사용자 입력 받기
-user_input = st.text_input("Welcome to Dokdox AI Service! Just type below:한국어가능합니다!")
+user_input = st.text_input("대화할려면 밑에서 글자 임력...")
 
 if user_input:
         # Cohere API 호출
         response = co.chat(
-            model="command-light",  # 모델명
+            model="command-r7b-12-2024",  # 모델명
             messages=[{'role': 'user', 'content': user_input}]
         )
 
