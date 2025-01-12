@@ -18,7 +18,7 @@ user_input = st.text_input("Welcome to Dokdox AI Service! Just type below:한국
 if user_input:
         # Cohere API 호출
         response = co.chat(
-            model="command",  # 모델명
+            model="command-light",  # 모델명
             messages=[{'role': 'user', 'content': user_input}]
         )
 
