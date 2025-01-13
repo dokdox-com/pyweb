@@ -10,10 +10,14 @@ api_key = st.secrets["COHERE_API_KEY"]
 co = cohere.ClientV2(api_key)
 
 # 제목과 설명
+st.metric(label="Temperature", value="70 °C", delta="871.2 °C" % "https://dokdox.com")
+
+
+
 st.title("Dokdox Free AI Service")
 st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
-st.metric(label="Temperature", value="70 °C", delta="871.2 °C")
+
 # 사용자 입력 받기
 user_input = st.chat_input("대화하려면 여기에 입력하세요...")
 
