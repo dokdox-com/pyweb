@@ -13,7 +13,7 @@ st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
 
 # 사용자 입력 받기
-user_input = st.chat_message("대화할려면 밑에서 글자 임력...")
+user_input = st.chat_input("대화할려면 밑에서 글자 임력...")
 
 # 응답 히스토리 초기화
 
@@ -24,6 +24,6 @@ if user_input:
         model="command-r7b-12-2024",  # 모델명
         messages=[{'role': 'user', 'content': user_input }]
     )
-    st.write(response.message.content[0].text)
+    st.chat_message(response.message.content[0].text)
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
 
