@@ -22,6 +22,5 @@ if user_input:
         model="command-r7b-12-2024",  # 모델명
         messages=[{'role': 'user', 'content': user_input }]
     )
-
-    st.chat_message("AI").write(response['messages'][0]['content'])
+    st.chat_message("AI").write(response.message.content[0].text)
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
