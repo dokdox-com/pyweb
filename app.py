@@ -19,7 +19,7 @@ if user_input:
         # Cohere API 호출
         response = co.chat(
             model="command-r7b-12-2024",  # 모델명
-            messages=[{'role': 'user', 'content':  "응답:"+user_input + "이름"+name}]
+            messages=[{'role': 'user', 'content':  "응답:"+user_input + "나의 이름은 "+name}]
         )
 
         # 응답 출력
