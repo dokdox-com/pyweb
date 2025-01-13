@@ -5,7 +5,7 @@ import streamlit as st
 api_key = st.secrets["COHERE_API_KEY"]
 
 # API 클라이언트 초기화
-co = cohere.Client(api_key)
+co = cohere.ClientV2(api_key)
 
 # 제목과 설명
 st.title("Dokdox Free AI Service")
