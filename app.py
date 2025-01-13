@@ -13,7 +13,7 @@ co = cohere.ClientV2(api_key)
 st.title("Dokdox Free AI Service")
 st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
-st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+st.metric(label="Temperature", value="70 °C", delta="871.2 °C")
 # 사용자 입력 받기
 user_input = st.chat_input("대화하려면 여기에 입력하세요...")
 
