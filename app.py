@@ -4,6 +4,8 @@ import streamlit as st
 # Streamlit secrets에서 API 키 가져오기
 api_key = st.secrets["COHERE_API_KEY"]
 
+
+
 # API 클라이언트 초기화
 co = cohere.ClientV2(api_key)
 
@@ -11,7 +13,7 @@ co = cohere.ClientV2(api_key)
 st.title("Dokdox Free AI Service")
 st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
-
+st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 # 사용자 입력 받기
 user_input = st.chat_input("대화하려면 여기에 입력하세요...")
 
