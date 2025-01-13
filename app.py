@@ -14,12 +14,12 @@ st.write("Thank you for using the free AI service!")
 
 # 사용자 입력 받기
 user_input = st.text_input("대화할려면 밑에서 글자 임력...")
-
+name = st.text_input("이름을 임력해주세요")
 if user_input:
         # Cohere API 호출
         response = co.chat(
             model="command-r7b-12-2024",  # 모델명
-            messages=[{'role': 'user', 'content':  "응답:"+user_input + "응답을 최대한 질 있게 해줄래!"}]
+            messages=[{'role': 'user', 'content':  "응답:"+user_input + "이름"+name}]
         )
 
         # 응답 출력
