@@ -9,8 +9,11 @@ api_key = st.secrets["COHERE_API_KEY"]
 # API 클라이언트 초기화
 co = cohere.ClientV2(api_key)
 
-# 제목과 설명
-st.metric(label="Temperature", value="70 °C", delta="871.2 °C" % "https://dokdox.com")
+#예시
+st.metric(label="Temperature", value="20 °C", delta="약 20 도 증가됨")
+#링크
+st.markdown("[더 나은 dokdox 의 정보를 확인할려면 dokdox.com 에 방문해보세요.](https://dokdox.com)")
+
 
 
 
