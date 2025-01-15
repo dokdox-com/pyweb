@@ -19,32 +19,22 @@ st.title("Dokdox Free AI Service")
 st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
 
+# 사이드바에 슬라이더 추가
+
+# 응답 히스토리 초기화
+num_sentences = st.sidebar.slider("문장 수 조절", min_value=1, max_value=10, value=3)
+
 # 사용자 입력 받기
 user_input = st.chat_input("대화하려면 여기에 입력하세요.../Type here to chat!")
 # 사이드바에 슬라이더 추가
-n = st.sidebar.slider("응답메시지 길이 설정--만약 너무 잛거나 길게 하면 응답오류가 발생할수도 있습니다!:(단위:문장)", 0, 100, 50)
+
 # 응답 히스토리 초기화
 if user_input:
-    # Cohere API 호출
+    # Cohere API 호출 시 문장 수 제한 추가
     response = co.chat(
-        model="command-r7b-12-2024",  # 모델명
-        messages=[{'role': 'user', 'content': user_input + "다음 문장 "+n+"보다 길게 메시지를 작성해줄래." }]
+        model="command-r7b-12-2024",
+        messages=[{'role': 'user', 'content': user_input}],
+        max_tokens=num_sentences * 15  # 문장 당 평균 토큰 수를 15개로 가정
     )
     st.chat_message("AI").write(response.message.content[0].text)
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Additional content in the main area
-st.write("This is some content displayed regardless of the sidebar selection.")
