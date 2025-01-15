@@ -21,13 +21,14 @@ st.write("Thank you for using the free AI service!")
 
 # 사용자 입력 받기
 user_input = st.chat_input("대화하려면 여기에 입력하세요.../Type here to chat!")
-
+# 사이드바에 슬라이더 추가
+n = st.sidebar.slider("응답메시지 길이 설정--만약 너무 잛거나 길게 하면 응답오류가 발생할수도 있습니다!:(단위:문장)", 0, 100, 50)
 # 응답 히스토리 초기화
 if user_input:
     # Cohere API 호출
     response = co.chat(
         model="command-r7b-12-2024",  # 모델명
-        messages=[{'role': 'user', 'content': user_input }]
+        messages=[{'role': 'user', 'content': user_input + n +"문장 보다 길게 메시지를 작성해줄래." }]
     )
     st.chat_message("AI").write(response.message.content[0].text)
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
@@ -36,15 +37,12 @@ if user_input:
 
 
 
-# 사이드바에 슬라이더 추가
-숫자 = st.sidebar.slider("숫자를 선택하세요", 0, 100, 50)
 
-# 사이드바에 체크박스 추가
-체크박스 = st.sidebar.checkbox("이 상자에 체크")
 
-# 메인 화면에 결과 출력
-st.write("선택한 숫자:", 숫자)
-st.write("체크박스 상태:", 체크박스)
+
+
+
+
 
 
 
