@@ -5,7 +5,8 @@ import streamlit as st
 api_key = st.secrets["COHERE_API_KEY"]
 
 
-
+#경고
+st.warning("dokdox 에서 만든 이 페이지는 개발중인 기능으로 아직 완성되지 않았습니다.오류가 발생할수도 있습니다.")
 # API 클라이언트 초기화
 co = cohere.ClientV2(api_key)
 
