@@ -28,7 +28,7 @@ if user_input:
     # Cohere API 호출
     response = co.chat(
         model="command-r7b-12-2024",  # 모델명
-        messages=[{'role': 'user', 'content': user_input + n +"문장 보다 길게 메시지를 작성해줄래." }]
+        messages=[{'role': 'user', 'content': user_input + "다음 문장 "+n+"보다 길게 메시지를 작성해줄래." }]
     )
     st.chat_message("AI").write(response.message.content[0].text)
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
