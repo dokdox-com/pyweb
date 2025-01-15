@@ -1,7 +1,5 @@
 import cohere
 import streamlit as st
-import pandas as pd
-import numpy as np
 
 # Streamlit secrets에서 API 키 가져오기
 api_key = st.secrets["COHERE_API_KEY"]
@@ -35,3 +33,16 @@ if user_input:
     st.write("This AI response was generated using Cohere's language model. / Non-commercial use only.")
 
 
+
+# Sidebar options
+option1 = st.sidebar.selectbox("Choose an option:", ["Option A", "Option B", "Option C"])
+
+if option1 == "Option A":
+    st.write("You selected Option A!")
+elif option1 == "Option B":
+    st.write("You chose Option B!")
+else:
+    st.write("You picked Option C!")
+
+# Additional content in the main area
+st.write("This is some content displayed regardless of the sidebar selection.")
