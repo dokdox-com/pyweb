@@ -34,15 +34,19 @@ if user_input:
 
 
 
-# Sidebar options
-option1 = st.sidebar.selectbox("Choose an option:", ["Option A", "Option B", "Option C"])
 
-if option1 == "Option A":
-    st.write("You selected Option A!")
-elif option1 == "Option B":
-    st.write("You chose Option B!")
-else:
-    st.write("You picked Option C!")
+
+# 사이드바에 슬라이더 추가
+숫자 = st.sidebar.slider("숫자를 선택하세요", 0, 100, 50)
+
+# 사이드바에 체크박스 추가
+체크박스 = st.sidebar.checkbox("이 상자에 체크")
+
+# 메인 화면에 결과 출력
+st.write("선택한 숫자:", 숫자)
+st.write("체크박스 상태:", 체크박스)
+
+
 
 # Additional content in the main area
 st.write("This is some content displayed regardless of the sidebar selection.")
