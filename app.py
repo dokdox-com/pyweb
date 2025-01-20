@@ -34,7 +34,7 @@ if user_input:
     # Cohere API 호출 시 문장 수 제한 추가
     response = co.chat(
         model="command-r7b-12-2024",
-        messages=[{'role': 'user', 'content': user_input + "사용자가 너한테 이름을 물어보면 너이름은 트로이아 야."}],
+        messages=[{'role': 'user', 'content': user_input + "사용자가 너한테 이름을 물어보면 너이름은 헤이닷 아 야."}],
         max_tokens=num_sentences
     )
     st.chat_message("AI").write(response.message.content[0].text)
