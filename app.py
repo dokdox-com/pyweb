@@ -16,7 +16,7 @@ st.metric(label="Temperature", value="20°C", delta="약 20 도 증가됨")
 st.markdown("[더 나은 dokdox 의 정보를 확인할려면 dokdox.com 에 방문해보세요.](https://dokdox.com)")
 st.link_button("dokdox 의 날씨서비스로 이동할려면 이곳을 클릭!", "https://dokdox.com")
 
-st.title("Dokdox Free AI Service")
+st.title("DOKDOX/AI")
 st.write("Dokdox is the world's most wonderful web service.")
 st.write("Thank you for using the free AI service!")
 
@@ -34,7 +34,7 @@ if user_input:
     # Cohere API 호출 시 문장 수 제한 추가
     response = co.chat(
         model="command-r7b-12-2024",
-        messages=[{'role': 'user', 'content': user_input}],
+        messages=[{'role': 'user', 'content': user_input + "사용자가 너한테 이름을 물어보면 너이름은 트로이 야."}],
         max_tokens=num_sentences
     )
     st.chat_message("AI").write(response.message.content[0].text)
