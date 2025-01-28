@@ -2,7 +2,7 @@ import cphere  # cphere 라이브러리로 변경
 import streamlit as st
 
 # Streamlit secrets에서 API 키 가져오기
-api_key = st.secrets["CPHERE_API_KEY"]  # cphere API 키로 변경
+api_key = st.secrets["COHERE_API_KEY"]  # cphere API 키로 변경
 
 # 경고
 st.warning("dokdox 에서 만든 이 페이지는 개발중인 기능으로 아직 완성되지 않았습니다. 오류가 발생할수도 있습니다.")
